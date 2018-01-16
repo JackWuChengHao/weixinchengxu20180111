@@ -28,7 +28,7 @@ Page({
 
         //sliderList
         wx.request({
-            url: 'http://huanqiuxiaozhen.com/wemall/slider/list',
+            url: 'https://huanqiuxiaozhen.com/wemall/slider/list',
             method: 'GET',
             data: {},
             header: {
@@ -43,7 +43,7 @@ Page({
 
         //venuesList
         wx.request({
-            url: 'http://huanqiuxiaozhen.com/wemall/venues/venuesList',
+            url: 'https://huanqiuxiaozhen.com/wemall/venues/venuesList',
             method: 'GET',
             data: {},
             header: {
@@ -63,7 +63,7 @@ Page({
 
         //choiceList
         wx.request({
-            url: 'http://huanqiuxiaozhen.com/wemall/goods/choiceList',
+            url: 'https://huanqiuxiaozhen.com/wemall/goods/choiceList',
             method: 'GET',
             data: {},
             header: {
