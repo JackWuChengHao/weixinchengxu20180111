@@ -5,11 +5,11 @@
   ],
   "window":{
     "backgroundTextStyle":"white",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "法律咨询",
     "navigationBarBackgroundColor": "#FFFFFF",
     "backgroundColor": "#000000",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#6e6d6b",
