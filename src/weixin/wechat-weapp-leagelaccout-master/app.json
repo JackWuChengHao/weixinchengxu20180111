@@ -1,5 +1,7 @@
 {
   "pages":[
+    "testpages/register/index",
+    "pages/register/index",
     "pages/index/index",
     "pages/my/index"
   ],

@@ -1,0 +1,2 @@
+<!--testpages/register/index.wxml-->
+<button open-type="getPhoneNumber" bindtap='getPhoneNumber'>使用手机号注册</button>
