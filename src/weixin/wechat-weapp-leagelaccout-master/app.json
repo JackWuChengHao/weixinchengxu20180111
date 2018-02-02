@@ -1,9 +1,17 @@
 {
+  
   "pages":[
-    "testpages/register/index",
-    "pages/register/index",
     "pages/index/index",
-    "pages/my/index"
+    "pages/consult/index",
+  "pages/register/index",
+    "testpages/register/index",
+    "pages/registerByselfpHONE/index", 
+    "pages/my/index",
+  "pages/bbs/index",
+    "pages/myquestion/index",
+    "pages/setInfo/index",
+    "pages/systeminfo/index",
+    "pages/customerservice/index"
   ],
   "window":{
     "backgroundTextStyle":"white",
@@ -23,7 +31,13 @@
       "iconPath": "images/homepage.png",
       "selectedIconPath": "images/active-homepage.png",
       "text": "首页"
-    }, {
+    } ,
+    {
+      "pagePath": "pages/bbs/index",
+      "iconPath": "images/bbs.png",
+      "selectedIconPath": "images/active-bbs.png",
+      "text": "吐槽间"
+    },{
       "pagePath": "pages/my/index",
       "iconPath": "images/my.png",
       "selectedIconPath": "images/active-my.png",

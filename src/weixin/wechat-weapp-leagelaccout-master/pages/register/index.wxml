@@ -7,16 +7,16 @@
             <text class="grayLineShu" style="height:auto"></text>
             <text style="color:#000;width:100%;text-align: center;margin-top:33rpx">{{location}}</text>
         </view>
-        <text class="grayLineHeng" />
+         <text class="grayLineHeng" /> 
         <view class="container-hang" style="width:{{windowWidth}}px;">
             <image src="{{icon_phone}}" style="width:49rpx; height: 49rpx; margin:28rpx"/>
             <input id="input_phoneNum" bindchange="input_phoneNum" style="margin:24rpx 32rpx 0 0;height:49rpx;" placeholder="请输入电话号码" type="number"/>
         </view>
-        <text class="grayLineHeng" />
+         <text class="grayLineHeng" /> 
     </view>
     
     <!--第二步-->
-    <view wx:if="{{step==2}}" id="secondStep_Pad" class="container" style="height:auto;align-items:flex-start;">
+    <!-- <view wx:if="{{step==2}}" id="secondStep_Pad" class="container" style="height:auto;align-items:flex-start;">
         <text style="margin:44rpx; font-size:30rpx">验证码已经发送到您的手机\n如长时间没有收到，请点击“重新获取”</text>
         <text class="grayLineHeng" />
         <view class="container-hang" style="width:{{windowWidth}}px;">
@@ -26,10 +26,10 @@
         <text class="grayLineHeng" />
 
         <button bindtap="reSendPhoneNum" size="mini" style="margin-top:23rpx;margin-right:23rpx">重新获取({{time}}s)</button>
-    </view>
+    </view> -->
 
     <!--第三步-->
-    <view wx:if="{{step==3}}" id="thirdStep_Pad" class="container" style="height:auto;margin-top:23rpx">
+    <!-- <view wx:if="{{step==3}}" id="thirdStep_Pad" class="container" style="height:auto;margin-top:23rpx">
         <text class="grayLineHeng" />
         <view class="container-hang" style="width:{{windowWidth}}px;">
             <image src="{{icon_password}}" style="width:49rpx; height: 49rpx; margin:28rpx"/>
@@ -41,7 +41,7 @@
             <input bindchange="input_rePassword" style="margin:24rpx 32rpx 0 0;height:49rpx;" placeholder="请再次输入密码" password/>
         </view>
         <text class="grayLineHeng" />
-    </view>
+    </view> -->
 
     <button style="width:{{nextButtonWidth}}px;margin-top:35rpx" 
     type="primary" size="default" bindtap="nextStep">下一步</button>

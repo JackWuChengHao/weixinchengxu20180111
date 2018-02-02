@@ -1,57 +1,32 @@
-<!--index.wxml-->
-<view class="container">
 
-
-  <!--轮播组建-->
+<!-- <view id="header">
+    <view class="content">
+    	<image src="{{userInfo.avatarUrl}}"></image>
+        <view class="nickname">{{userInfo.nickName}}</view>
+        <view class="orther">{{userInfo.province}}</view>
+    </view>
+</view> -->
+<!--轮播组建-->
   <swiper indicator-dots='true' autoplay='true' vertical='true' interval='10000' duration='500' style='height=100%'>
     <!-- <block wx:for="{{nav_pic}}">
     <swiper-item><image  src="{{item.picurl}}" data-navurl="{{item.url}}"     bindtap='nav2section'></image></swiper-item>
     </block> -->
   </swiper>
-  <!--快捷查询入口-->
-  <view class="consulting_entrance_list">
-    <view class="consulting_entrance_item">1</view>
-    <view class="consulting_entrance_item">2</view>
-    <view class="consulting_entrance_item">3</view>
-    <view class="consulting_entrance_item">4</view>
-  </view>
-<!--展示内容-->
-  <view class="counter">
-    <view class="display_content_list">
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
-      <view class="display_content">
-        <image class="display_content_pic" src='../../images/my.png'></image>
-        <text class="display_content_text">图片说明</text>
-      </view>
+<view id="section">
+    <view class="flex-wrp" style="flex-direction:row;">
+        <view class="flex-item {{item.classes}}" wx:for="{{x_menus}}" bindtap='navtoConsultPage' data-withinfotoconsult="{{item.withinfotoconsult}}">
+            <view>
+                <image src="{{item.icon}}" class="icon"></image>
+            </view>
+            <view class="menus_title">
+                <text>{{item.title}}</text>
+            </view>
+        </view>
     </view>
-  </view>
-
-
+</view>
+<view id="menus">
+    <view class="content" wx:for="{{y_menus}}">
+     <view  class="view"><image src="../../images/my.png"        style="width:14px;height:14px"></image></view>
+        <view class="right"><text>{{item.title}}</text></view>
+    </view>
 </view>

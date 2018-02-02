@@ -1,49 +1,61 @@
-.container {
-    background-color: #F2f2f2;
+page{
+    background: #ebebeb;
 }
-
-.consulting_entrance_list{
-  display: flex;
-  align-content: space-between;
-  flex-wrap: wrap;
-  padding: 0;
+#header{
+    width:100%;
+    height:260px;
+    background: #3080c0;
+    color:#ffffff;
 }
-
-.consulting_entrance_item{
-  margin: auto auto;
+#header .content{
+    padding-top:60px;
+    text-align: center;
 }
-
-.counter{
-  display: flex;
-  display: -webkit-flex;
+#header .content image{
+    width:100px;
+    height:100px;
+    border-radius: 100px;
 }
-
-
-.display_content_list{
-  display: inline-flex;
-  align-content: space-around;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
+#header .content .nickname{
+    padding-top:20px;
 }
-
-
-.display_content{
-  display: inline-flex;
-  width: 100%;
-  align-content: space-around;
-  padding: 0;
-  margin: 0;
+#header .content .orther{
+    padding-top:10px;
+    font-size:15px;
 }
-
-
-.display_content_pic{
-  width: 150rpx;
-  height: 150rpx;
-  padding: 0;
-  margin: 0;
+#section .icon{
+    width:23px;
+    height:23px;
 }
+#section .menus_title{
+    display: block;
+}
+#section .menus_title text{
+    font-size:13px;
+}
+#menus{
+    background: #ffffff;
+    margin-top:10px;
+    height:auto;
+    width:100%;
+}
+#menus .content{
+    height:45px;
+    border-bottom: 0.5px solid #ebebeb; 
+}
+#menus .content .view{
+    float: left;
 
-.display_content_text{
-  align-content: space-around;
+}
+#menus .content .left{
+    /* font-size:15px; */
+    height: 45px;
+    line-height:45px;
+    padding-left:20px;
+}
+#menus .content .text{
+    height: 45px;
+    float: right;
+    margin-right:10px;
+    line-height: 45px;
 }
