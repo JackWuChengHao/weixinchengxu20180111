@@ -1,27 +1,15 @@
-// pages/documentlists/index.js
+// pages/detailmessage/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-        documentlist:[
-        {
-          id:"1",
-          name:"劳动人事制度",
-        },
-        {
-          id:"2",
-          name:"伤害事故处理",
-        }
-        ],
-        filename:
-          [{ id: "1", name: "单位不得收取押金、扣留证件或档案" }, { id: "2", name: "如何申请工伤认定" }],
-        filename1:
-        [{ id: "3", name: "发生火灾后如何紧急逃生" }, { id: "4", name: "投保校方责任险" }],
-        
-        now_filename:[]
-      
+    id:0,
+    item:{
+      title:"测试",
+      content:"这是我们大家的问题你明白吗,哦你还不明白吗我真的是无语了你到西在想什么"
+    }
   },
 
   /**
@@ -30,9 +18,8 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-       now_filename:that.data.filename
-    })
-    
+      id:options.id,
+    });
   },
 
   /**
@@ -46,7 +33,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.hideLoading();
+    var that = this;
+    console.log(that.data.id);
   },
 
   /**
@@ -82,17 +71,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  change_filename:function(e){
-    var that = this;
-    if (e.currentTarget.dataset.classifyId == 2){
-        that.setData({
-       now_filename: that.data.filename1
-    })
-    }else{
-      that.setData({
-        now_filename: that.data.filename
-      })
-    }
   }
 })

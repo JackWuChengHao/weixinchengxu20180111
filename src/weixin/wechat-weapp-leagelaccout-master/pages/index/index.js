@@ -9,13 +9,13 @@ Page({
         duration: 1000,
         loadingHidden: true,  // loading
         y_menus: [
-          { title: '胡律师人好' },
-          { title: '胡律师人好' },
-          { title: '胡律师人好' },
-          { title: '胡律师人好' },
-          { title: '胡律师人好' },
-          { title: '胡律师人好' },
-          { title: '胡律师人好' },
+          { id:"1",title: '胡律师人好' },
+          { id: "2",title: '胡律师人好' },
+          { id: "3",title: '胡律师人好' },
+          { id: "4",title: '胡律师人好' },
+          { id: "5",title: '胡律师人好' },
+          { id: "6",title: '胡律师人好' },
+          { id: "7",title: '胡律师人好' },
         ],
         x_menus: [
           { title: '教师', 
@@ -45,64 +45,16 @@ Page({
                 userInfo: userInfo
             })
         })
-
-        //sliderList
-        wx.request({
-            url: 'https://huanqiuxiaozhen.com/wemall/slider/list',
-            method: 'GET',
-            data: {},
-            header: {
-                'Accept': 'application/json'
-            },
-            success: function(res) {
-                that.setData({
-                    images: res.data
-                })
-            }
-        })
-
-        //venuesList
-        wx.request({
-            url: 'https://huanqiuxiaozhen.com/wemall/venues/venuesList',
-            method: 'GET',
-            data: {},
-            header: {
-                'Accept': 'application/json'
-            },
-            success: function(res) {
-                that.setData({
-                    venuesItems: res.data.data
-                })
-                setTimeout(function () {
-                    that.setData({
-                        loadingHidden: true
-                    })
-                }, 1500)
-            }
-        })
-
-        //choiceList
-        wx.request({
-            url: 'https://huanqiuxiaozhen.com/wemall/goods/choiceList',
-            method: 'GET',
-            data: {},
-            header: {
-                'Accept': 'application/json'
-            },
-            success: function(res) {
-                that.setData({
-                    choiceItems: res.data.data.dataList
-                })
-                setTimeout(function () {
-                    that.setData({
-                        loadingHidden: true
-                    })
-                }, 1500)
-            }
-        })
-
     },
+  todetail:function(e){
+    wx.showLoading({
+      title: '请稍等',
+    })
+    wx.navigateTo({
+      url: "../detailmessage/index?id=" + e.currentTarget.dataset.id,
+})
 
+  },
     navtoConsultPage: function (item) {
       wx.showLoading({
         title: '请稍等',

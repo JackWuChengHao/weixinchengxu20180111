@@ -4,19 +4,34 @@
   overflow: scroll;
 }
 
+.header{
+  display: block;
+  text-align: center;
+}
+
+.header text{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  color: #515151;
+}
+
 .item-li{
-  background: #fff;
+background: #fff;
 margin-top: 22rpx;
 }
 
 .item-li .item-content{
+display: block;
+padding: 0rpx 20rpx;
 width: 100%;
 text-align: left;
-height: 100rpx;
+height: auto;
+overflow:scroll;
 }
 
 .item-li .item-apply {
-padding: 35rpx 50rpx;
+display: block;
+padding: 0rpx 20rpx;
 border-top: 1rpx solid #f0f0f0;
 overflow:scroll;
 }

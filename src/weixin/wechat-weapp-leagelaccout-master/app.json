@@ -3,8 +3,9 @@
 
       "pages/index/index",
       "pages/myquestion/index",
-      
+        "pages/detailmessage/index",
       "pages/setInfo/index",
+      "pages/lvshiquestion/index",
     "pages/consult/index",
     "pages/register/index",
     "testpages/register/index",

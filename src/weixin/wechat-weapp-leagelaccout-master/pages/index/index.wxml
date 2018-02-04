@@ -16,8 +16,12 @@
         </view>
     </view>
 </view>
+<view class="white">
+<text>互动新闻</text>
+</view>
 <view id="menus">
-    <view class="content" wx:for="{{y_menus}}">
+ 
+    <view class="content" wx:for="{{y_menus}}" bindtap='todetail' data-id='{{item.id}}'>
      <view  class="view"><image src="../../images/my.png"        style="width:14px;height:14px"></image></view>
         <view class="right"><text>{{item.title}}</text></view>
     </view>
