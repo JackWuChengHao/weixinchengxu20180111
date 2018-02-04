@@ -1,2 +1,14 @@
-<!--pages/setInfo/index.wxml-->
-<text>pages/setInfo/index.wxml</text>
+<view class="setinfo_container"> 
+  <view class="menu">
+    <view class="menu-item">
+      <text>昵称:</text><input value="{{user.nichen}}" ></input>
+     </view>
+    <view class="menu-item"> 
+      <text>联系方式:</text><input value="{{user.telephone}}"></input>
+    </view>
+  </view>
+
+<view class="low_button">
+<button type='primary'>保存</button>
+</view>
+</view>

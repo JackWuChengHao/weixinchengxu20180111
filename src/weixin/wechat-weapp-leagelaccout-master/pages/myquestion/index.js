@@ -1,66 +1,55 @@
-// pages/myquestion/index.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
-  },
+    content: [
+      {
+      id: '01',
+      contents: 'question',
+      status:'0',
+      apply: '没问题',
+},
+{
+    id: '02',
+    contents: 'question',
+    status: '0',
+    apply: '没问题',
+}, 
+{
+    id: '03',
+    contents: 'question',
+    status: '0',
+    apply: '没问题',
+}
+]
+},
+  onLoad() {
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  onShow(){
     wx.hideLoading();
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   }
+  ,
+  showHide(e) {
+
+    var contentFor = this.data.content;
+
+    for(var i = 0; i<contentFor.length; i++) {
+  　　if (e.currentTarget.dataset.changeid == contentFor[i].id) {
+    　　　　var printPrice = "content[" + i + "].shows";
+    　　　　if (this.data.content[i].shows) {
+      　　　　　　this.setData({
+        　　　　　　　　[printPrice]: false
+      　　　　　　});
+    　　　　} else {
+      　　　　　　this.setData({
+        　　　　　　　　[printPrice]: true
+      　　　　　　});
+    　　　　}
+  　　} else {
+    　　　　　　var printPrice1 = "content[" + i + "].shows";
+    　　　　　　this.setData({
+      　　　　　　　　[printPrice1]: false
+    　　　　　　});
+  　　　　}
+　　}
+}
 })

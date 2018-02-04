@@ -1,1 +1,33 @@
-/* pages/myquestion/index.wxss */
+
+.container-wrap{
+  width: 100%;
+  overflow: scroll;
+}
+
+.item-li{
+  background: #fff;
+margin-top: 22rpx;
+}
+
+.item-li .item-content{
+width: 100%;
+text-align: left;
+height: 100rpx;
+}
+
+.item-li .item-apply {
+padding: 35rpx 50rpx;
+border-top: 1rpx solid #f0f0f0;
+overflow:scroll;
+}
+.item-li .item-content text{
+color: #4e4e4e;
+font-size: 46rpx;
+overflow:scroll;
+}
+.item-li .item-title text{
+color: #000;
+line-height: 100rpx;
+font-size: 46rpx;
+overflow:scroll;
+}

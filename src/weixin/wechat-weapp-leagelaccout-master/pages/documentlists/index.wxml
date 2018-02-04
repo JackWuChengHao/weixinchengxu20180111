@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="document_content_col">
+       
+    <view class="classify">
+     <block wx:for="{{documentlist}}">
+ 
+        <view> {{item.name}}</view>
+   
+    </block>
+      </view>
+        <view class="filename">
+       <block wx:for="{{filename}}">
+
+       <view> {{item.name}}</view>
+   
+   </block>
+     </view>
+    </view>
+
+</view>

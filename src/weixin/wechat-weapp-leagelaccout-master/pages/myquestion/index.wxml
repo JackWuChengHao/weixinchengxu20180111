@@ -1,2 +1,10 @@
-<!--pages/myquestion/index.wxml-->
-<text>pages/myquestion/index.wxml</text>
+<view >
+　　<view class="container-wrap">
+　　　　<block wx:for="{{content}}">
+　　　　　　<view class="item-li">
+　　　　　　　　<view class="item-content">{{item.contents}}</view>
+　　　　　　　　<view class="item-apply">{{item.apply}}</view>
+　　　　　　</view>
+　　　　</block>
+　　</view>
+</view>

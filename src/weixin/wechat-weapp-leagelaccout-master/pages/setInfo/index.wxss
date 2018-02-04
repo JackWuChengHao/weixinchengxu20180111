@@ -1,1 +1,20 @@
-/* pages/setInfo/index.wxss */
+.setinfo_container{
+  height: 100%;
+  width:100%;
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item{
+  display: flex;
+  flex-direction: row;
+}
+
+.low_button{
+ margin-top: 28%;
+
+  padding-top: 100%;
+}

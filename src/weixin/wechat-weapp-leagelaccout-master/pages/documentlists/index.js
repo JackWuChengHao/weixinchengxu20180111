@@ -1,14 +1,24 @@
-// pages/setInfo/index.js
+// pages/documentlists/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    user:{
-      nichen:"xiaohei",
-      telephone:"18852992317",
-    }
+        documentlist:[
+        {
+          id:"1",
+          name:"劳动人事制度",
+        },
+        {
+          id:"2",
+          name:"伤害事故处理",
+        }
+        ],
+        filename:
+          [{ id: "1", name: "单位不得收取押金、扣留证件或档案" }, { id: "2", name: "如何申请工伤认定" }]
+        
+      
   },
 
   /**
@@ -29,7 +39,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.hideLoading();
+  
   },
 
   /**
@@ -46,7 +56,7 @@ Page({
   
   },
 
-  /**11
+  /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
@@ -59,19 +69,7 @@ Page({
   onReachBottom: function () {
   
   },
-  change_nc:function(){
-    var that = this;
-    console.log("okok");
-    that.setData({
-      change_nichen:false
-    });
-  },
- change_tp: function () { 
-   var that = this;
-   that.setData({
-     change_telephone:false
-   });
- },
+
   /**
    * 用户点击右上角分享
    */

@@ -1,20 +1,23 @@
 {
-  
-  "pages":[
-    "pages/index/index",
+  "pages": [
+
+      "pages/index/index",
+      "pages/myquestion/index",
+      
+      "pages/setInfo/index",
     "pages/consult/index",
-  "pages/register/index",
+    "pages/register/index",
     "testpages/register/index",
-    "pages/registerByselfpHONE/index", 
+    "pages/registerByselfpHONE/index",
+    "pages/documentlists/index",
     "pages/my/index",
-  "pages/bbs/index",
-    "pages/myquestion/index",
-    "pages/setInfo/index",
+    "pages/bbs/index",
+   
     "pages/systeminfo/index",
     "pages/customerservice/index"
   ],
-  "window":{
-    "backgroundTextStyle":"white",
+  "window": {
+    "backgroundTextStyle": "white",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "法律咨询",
     "navigationBarBackgroundColor": "#FFFFFF",
@@ -26,23 +29,26 @@
     "selectedColor": "#000000",
     "borderStyle": "white",
     "backgroundColor": "#FFFFFF",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "images/homepage.png",
-      "selectedIconPath": "images/active-homepage.png",
-      "text": "首页"
-    } ,
-    {
-      "pagePath": "pages/bbs/index",
-      "iconPath": "images/bbs.png",
-      "selectedIconPath": "images/active-bbs.png",
-      "text": "吐槽间"
-    },{
-      "pagePath": "pages/my/index",
-      "iconPath": "images/my.png",
-      "selectedIconPath": "images/active-my.png",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/homepage.png",
+        "selectedIconPath": "images/active-homepage.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/documentlists/index",
+        "iconPath": "images/document-list.png",
+        "selectedIconPath": "images/active-document-list.png",
+        "text": "文献资料"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/active-my.png",
+        "text": "我的"
+      }
+    ]
   },
   "debug": true
 }

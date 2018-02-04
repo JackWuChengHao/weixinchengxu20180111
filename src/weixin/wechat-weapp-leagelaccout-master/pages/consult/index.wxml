@@ -1,8 +1,11 @@
 <view class="container" style="height: {{windowHeight}}px">
- <view style="height:auto;">
-  <textarea class="question_content" placeholder='请再此输入问题'></textarea>
+ <view >
+  <textarea class="question_content" placeholder='请在此输入问题'></textarea>
 </view>
- <button style="width:120px;margin-top:35rpx" 
+ 
+<view class="low_button">
+ <button
     type="primary" size="default" bindtap="submitquestion">提交</button>
+</view>
 
-    </view>
+</view>
