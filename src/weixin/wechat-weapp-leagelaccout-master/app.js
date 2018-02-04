@@ -18,7 +18,9 @@ App({
           console.log(ee);
           wx.getUserInfo({
             success: function (res) {
+              console.log("asdd")
               console.log(res)
+              console.log("asdd")
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
