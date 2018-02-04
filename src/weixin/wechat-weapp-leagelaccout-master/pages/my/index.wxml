@@ -1,11 +1,15 @@
 <!--index.wxml-->
 <view class="container">
   <view bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    <view class="user_sign_left">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class="user_sign_right">
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    </view>
   </view>
   <view class="sign_bar">
-    <view class="user_collection">您当前积分为</view>
+    <view class="user_collection">您当前积分: <image class="points" src="/images/points-icon.png"></image></view>
     <view class="user_sign">
       <view class="sign_in_text">签到</view>
     </view>

@@ -3,6 +3,10 @@
   background-color: #F2f2f2;
   font-family: "华文细黑"
 }
+.points{
+  width: 15px;
+  height: 15px;
+}
 
 .userinfo {
   display: flex;
@@ -12,16 +16,24 @@
   background: #0a4e27;
 }
 
+.user_sign_left{
+  flex:30%
+}
+.user_sign_right{
+  flex:70%
+}
+
 .userinfo-avatar {
   width: 108rpx;
   height: 108rpx;
-  margin: auto 10%;
+  margin: auto 25%;  
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   margin-left: 12px;
   margin-top: 10px;
+  margin-bottom: 10px;
   color:#fafafa;
   font-size: 16px;
 }
@@ -34,6 +46,7 @@
   justify-content: space-between;
 }
 .user_collection{
+  margin-left: 20px;
   flex:80%;
   margin-top: 10px; 
   margin-bottom: 10px; 
@@ -43,7 +56,7 @@
 }
 .sign_in_text{
   background-color: #ff6c00;
-   margin-top: 10px; 
+  margin-top: 10px; 
   margin-bottom: 10px;  
   color:#f1f1f1;
   font-size: 18px;
