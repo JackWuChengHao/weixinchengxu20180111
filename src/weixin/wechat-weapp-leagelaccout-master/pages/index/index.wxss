@@ -35,7 +35,7 @@ page{
 }
 #menus{
     background: #ffffff;
-    margin-top:10px;
+
     height:auto;
     width:100%;
 }
@@ -58,4 +58,17 @@ page{
     float: right;
     margin-right:10px;
     line-height: 45px;
+}
+
+.menus text{
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.white{
+  display: block;
+  text-align: center;
+  background-color: white;
+  margin-top:10px;
+  padding-bottom:5px;
 }

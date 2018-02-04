@@ -5,13 +5,14 @@
 
 
 .document_content_col{
-display: flex;
-   flex-direction: row;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
 }
 
 .document_content_col .classify{
-    display: flex;
+  height: 200px;
+  display: flex;
   flex-direction: column;
 }
 
@@ -19,4 +20,5 @@ display: flex;
 .document_content_col .filename{
   display: flex;
   flex-direction: column;
+  margin: 5px;
 }

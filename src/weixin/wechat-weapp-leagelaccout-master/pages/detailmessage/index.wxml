@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="header">
+    <text>{{item.title}}</text>
+  </view>
+  <view class="body"> 
+      <text>{{item.content}}
+      </text>
+  </view>
+</view>

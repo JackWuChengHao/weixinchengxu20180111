@@ -3,16 +3,12 @@
        
     <view class="classify">
      <block wx:for="{{documentlist}}">
- 
-        <view> {{item.name}}</view>
-   
+        <view data-classify-id="{{item.id}}" class="classify" data-id=' {{item.id}}' bindtap='change_filename'> {{item.name}}</view>
     </block>
       </view>
         <view class="filename">
-       <block wx:for="{{filename}}">
-
-       <view> {{item.name}}</view>
-   
+       <block wx:for="{{now_filename}}">
+        <view data-file-id="{{item.id}}" class="filename" data-id="{{item.id}}" bindtap='open'> {{item.name}}</view>
    </block>
      </view>
     </view>
