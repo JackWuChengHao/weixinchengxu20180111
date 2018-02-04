@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    modalHidden:true,
     documentlistcolor: [{ color: "black" }, { color: "black" }, { color: "black" }, { color: "black" }, { color: "black" }, { color: "black" }],
     filelistcolor: [{ color: "black" }, { color: "black" }, { color: "black" }, { color: "black" }, { color: "black" }],
         documentlist:[
@@ -74,7 +75,12 @@ Page({
   onReady: function () {
   
   },
-
+  closeModal: function () {
+    var that = this
+    that.setData({
+      modalHidden: true
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -118,13 +124,23 @@ Page({
   },
   openfile:function(e){
     console.log(e);
-    wx.openDocument({
-      filePath: '../../files/从《劳动合同法》看学校该如何完善用工制度.docx',
-      fileType:'docx',
-      success:function(){
-        console.log("asdasd");
+    var that = this;
+    that.setData({
+      modalHidden:false,
+    })
+    wx.downloadFile({
+      url: "https://www.bafy.gov.cn/uploadfiles/files/zfl.doc",
+      success: function (res){
+        var filePath = res.tempFilePath 
+        wx.openDocument({
+          filePath: 'filePath',
+          success: function (res) {
+            console.log(res);
+          }
+        })
       }
     })
+    
   }
   ,
   change_filename:function(e){
