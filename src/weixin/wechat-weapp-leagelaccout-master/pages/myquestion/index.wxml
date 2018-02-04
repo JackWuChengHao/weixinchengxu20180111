@@ -1,7 +1,7 @@
 <view >
     <view class="header"> 
-      <view> 未解决问题 </view>
-      <view>  已解决问题 </view>
+      <view class="swiper"> 未解决问题 </view>
+      <view class="swiper">  已解决问题 </view>
     </view>
 　　<view class="container-wrap">
 　　　　<block wx:for="{{content}}">

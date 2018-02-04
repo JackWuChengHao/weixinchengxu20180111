@@ -5,8 +5,15 @@
 }
 
 .header{
-  display: block;
+  display: flex;
   text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
+  background: white;
+}
+
+.header .swiper{
+    border-left: 1px #000;
 }
 
 .header text{
