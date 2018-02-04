@@ -27,6 +27,15 @@ Page({
    */
   onShow: function () {
     wx.hideLoading();
+    wx.showModal({
+      content: '客服暂未开通',
+      complete:function(){
+        wx.navigateBack({
+          
+        })
+      }
+    })
+    
   },
 
   /**
