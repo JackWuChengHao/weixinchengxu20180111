@@ -1,6 +1,7 @@
 <view >
     <view class="header"> 
-      <text>我的问题</text>
+      <view> 未解决问题 </view>
+      <view>  已解决问题 </view>
     </view>
 　　<view class="container-wrap">
 　　　　<block wx:for="{{content}}">
