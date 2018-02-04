@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="systemNoticeMapper">
+	<select id="selectById" parameterType="Integer" resultType="DBSystemNotice">
+		select *
+		from T_SystemNotice where id = #{id}
+	</select>
+	<select id="selectAll" parameterType="Map" resultType="DBSystemNotice">
+		select * from T_SystemNotice
+		<where>
+			<if test="content != null and content != ''">and content like concat('%', #{content}, '%')</if>
+			<if test="startCreateAt != null">and createAt &gt; #{startCreateAt}</if>
+			<if test="endCreateAt != null">and createAt &lt; #{endCreateAt}</if>
+			<if test="startReleaseAt != null">and releaseAt &gt; #{startReleaseAt}</if>
+			<if test="endReleaseAt != null">and releaseAt &lt; #{endReleaseAt}</if>
+		</where>
+	</select>
+	<insert id="insert" parameterType="DBSystemNotice"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		T_SystemNotice(content, createAt, releaseAt)
+		values (#{content},
+		#{createAt}, #{releaseAt})
+	</insert>
+	<update id="update" parameterType="DBSystemNotice">
+		update T_SystemNotice
+		<set>
+			<if test="content != null and content != ''">content = #{content},</if>
+			<if test="startCreateAt != null">createAt = #{createAt},</if>
+			<if test="endCreateAt != null">releaseAt = #{releaseAt},</if>
+		</set>
+		where id = #{id}
+	</update>
+</mapper>

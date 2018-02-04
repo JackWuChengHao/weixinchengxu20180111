@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="questionMapper">
+	<resultMap type="DBQuestion" id="questionMap">
+		<id property="id" column="id" />
+		<result property="content" column="content" />
+		<result property="createAt" column="createAt" />
+		<result property="questionerContactInfo" column="questionerContactInfo" />
+		<result property="pay" column="pay" />
+		<result property="answerWay" column="answerWay" />
+		<result property="state" column="state" />
+		<result property="answerAt" column="answerAt" />
+		<result property="releasePlace" column="releasePlace" />
+		<association property="questioner" column="questionerId"
+			select="userMapper.selectById"></association>
+		<association property="answer" column="answerId"
+			select="userMapper.selectById"></association>
+	</resultMap>
+	<select id="selectById" parameterType="Long" resultMap="questionMap">
+		select *
+		from T_Question where id = #{id}
+	</select>
+	<select id="selectAll" parameterType="Map" resultMap="questionMap">
+		select * from T_Question
+		<where>
+			<if test="questioner != null">and questionerId = #{questioner.id}</if>
+			<if test="answer != null">and answerId = #{answer.id}</if>
+			<if test="content != null and conent != ''">and content = #{content}</if>
+			<if test="questionerContactInfo != null">and questionerContactInfo = #{questionerContactInfo}</if>
+			<if test="pay != null">and pay = #{pay}</if>
+			<if test="answerWay != null and answerWay != ''">and answerWay = #{answerWay}</if>
+			<if test="state != null and state != ''">and state = #{state}</if>
+			<if test="releasePlace != null and releasePlace != ''">and releasePlace = #{releasePlace}</if>
+			<if test="startCreateAt != null">and createAt &gt; #{startCreateAt}</if>
+			<if test="endCreateAt != null">and createAt &lt; #{endCreateAt}</if>
+			<if test="startAnswerAt != null">and answerAt &gt; #{startAnswerAt}</if>
+			<if test="endAnswerAt != null">and answerAt &lt; #{endAnswerAt}</if>
+		</where>
+	</select>
+	<insert id="insert" parameterType="DBQuestion" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into T_Question
+		(questionerId, content, createAt,
+		<if test="questionerContactInfo != null">questionerContactInfo, </if>
+		<if test="pay != null">pay, </if>
+		<if test="state != null and state != ''">state, </if>
+		)
+		values
+		(#{questioner.id}, #{content}, #{createAt},
+		<if test="questionerContactInfo != null">#{questionerContactInfo}, </if>
+		<if test="pay != null">#{pay}, </if>
+		<if test="state != null and state != ''">#{state}, </if>
+		)
+	</insert>
+	<update id="update" parameterType="DBQuestion">
+		update T_Question
+		<set>
+			<if test="content != null and content != ''">content = #{content}</if>
+			<if test="questionerContactInfo != null">questionerContactInfo = #{questionerContactInfo}</if>
+			<if test="pay != null">pay = #{pay}</if>
+			<if test="answerWay != null and answerWay != ''">answerWay = #{answerWay}</if>
+			<if test="state != null and state != ''">state = #{state}</if>
+			<if test="answerAt != null">answerAt = #{answerAt}</if>
+			<if test="answer != null">answerId = #{answer.id}</if>
+			<if test="releasePlace != null and releasePlace != ''">releasePlace = #{releasePlace}</if>
+		</set>
+		where id = #{id}
+	</update>
+</mapper>

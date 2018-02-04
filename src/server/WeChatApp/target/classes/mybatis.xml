@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="wechat.com.dao.pojo.DBArticle" alias="DBArticle" />
+		<typeAlias type="wechat.com.dao.pojo.DBLawyer" alias="DBLawyer" />
+		<typeAlias type="wechat.com.dao.pojo.DBPtBBSMessageRecord" alias="DBPtBBSMessageRecord" />
+		<typeAlias type="wechat.com.dao.pojo.DBPublicBBSMessageRecord" alias="DBPublicBBSMessageRecord" />
+		<typeAlias type="wechat.com.dao.pojo.DBQuestion" alias="DBQuestion" />
+		<typeAlias type="wechat.com.dao.pojo.DBSign" alias="DBSign" />
+		<typeAlias type="wechat.com.dao.pojo.DBSystemNotice" alias="DBSystemNotice" />
+		<typeAlias type="wechat.com.dao.pojo.DBTeacher" alias="DBTeacher" />
+		<typeAlias type="wechat.com.dao.pojo.DBUser" alias="DBUser" />
+	</typeAliases>
+	
+	<plugins>
+		<plugin interceptor="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">
+			<property name="dialectClass" value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect" />
+		</plugin>
+	</plugins>
+	
+	<mappers>
+		<mapper resource="wechat/com/dao/mapper/articleMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/lawyerMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/PtBBSMessageRecordMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/publicBBSMessageRecordMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/questionMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/signMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/systemNoticeMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/teacherMapper.xml"></mapper>
+		<mapper resource="wechat/com/dao/mapper/userMapper.xml"></mapper>
+	</mappers>
+</configuration>

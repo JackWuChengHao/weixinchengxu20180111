@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="publicBBSMessageRecordMapper">
+	<resultMap type="DBPublicBBSMessageRecord" id="publicBBSMessageRecordMap">
+		<id property="id" column="id" />
+		<result property="message" column="message" />
+		<result property="speakAt" column="speakAt" />
+		<result property="sensitive" column="sensitive" />
+		<association property="user" column="userId"
+			select="userMapper.selectById"></association>
+	</resultMap>
+	<select id="selectById" parameterType="Long" resultMap="publicBBSMessageRecordMap">
+		select *
+		from T_PublicBBSMessageRecord where id = #{id}
+	</select>
+	<select id="selectAll" parameterType="Map" resultMap="publicBBSMessageRecordMap">
+		select * from T_PublicBBSMessageRecord
+		<where>
+			<if test="userIdList != null">
+				and userId in
+				<foreach collection="userIdList" item="userId" index="index"
+					open="(" separator="," close=",">#{userId}</foreach>
+			</if>
+			<if test="message != null and message != ''">and message like concat('%', #{message}, '%')</if>
+			<if test="startSpeakAt != null">and speakAt &gt; #{startSpeakAt}</if>
+			<if test="endSpeakAt != null">and speakAt &gt; #{endSpeakAt}</if>
+			<if test="sensitive != null">and sensitive = #{sensitive}</if>
+		</where>
+	</select>
+	<insert id="insert" parameterType="DBPublicBBSMessageRecord" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into T_PublicBBSMessageRecord (userId, message, speakAt
+		<if test="sensitive != null">, sensitive</if>)
+		values
+		(#{user.id}, #{message}, #{speakAt}
+		<if test="sensitive != null">, #{sensitive}</if>)
+	</insert>
+	<update id="update" parameterType="DBPublicBBSMessageRecord">
+		update T_PublicBBSMessageRecord
+		<set>
+			<if test="user != null">userId = #{user.id},</if>
+			<if test="message != null and message != ''">message = #{message},</if>
+			<if test="speakAt != null">speakAt = #{speakAt},</if>
+			<if test="sensitive != null">sensitive = #{sensitive},</if>
+		</set>
+		where id = #{id}
+	</update>
+</mapper>

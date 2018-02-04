@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="articleMapper">
+	<select id="selectById" parameterType="Integer" resultType="DBArticle">
+		select * from T_Article where id = #{id}
+	</select>
+	<select id="selectAll" parameterType="Map" resultType="DBArticle">
+		select * from T_Article
+		<where>
+			<if test="brief != null and brief != ''">and brief like concat ('%', #{brief}, '%')</if>
+			<if test="details != null and details != ''">and details like concat ('%', #{details}, '%')</if>
+			<if test="briefInfo != null and briefInfo != ''">and briefInfo like concat ('%', #{briefInfo}, '%')</if>
+			<if test="releasePlace != null and releasePlace != ''">and releasePlace = #{releasePlace}</if>
+			<if test="startCreateAt != null">and createAt &gt; #{startCreateAt}</if>
+			<if test="endCreateAt != null">and createAt &lt; #{endCreateAt}</if>
+		</where>
+	</select>
+	<insert id="insert" parameterType="DBArticle" useGeneratedKeys="true" keyProperty="id">
+		insert into T_Article ( 
+		<if test="brief != null and brief != ''">brief, </if>
+		<if test="details != null and details != ''">details, </if>
+		<if test="createAt != null">createAt, </if>
+		<if test="releasePlace != null and releasePlace != ''">releasePlace, </if>,
+		<if test="briefInfo != null and briefInfo != ''">briefInfo, </if>
+		<if test="articleGroup != null and articleGroup != ''">articleGroup, </if>
+		<if test="articleIndex != null and articleIndex != ''">articleIndex, </if>)
+		values
+		(<if test="brief != null and brief != ''">#{brief}, </if>
+		<if test="details != null and details != ''">#{details}, </if>
+		<if test="createAt != null">#{createAt}, </if>
+		<if test="releasePlace != null and releasePlace != ''">#{releasePlace}, </if>,
+		<if test="briefInfo != null and briefInfo != ''">#{briefInfo}, </if>
+		<if test="articleGroup != null and articleGroup != ''">#{articleGroup}, </if>
+		<if test="articleIndex != null and articleIndex != ''">#{articleIndex}, </if>)
+	</insert>
+	<update id="update" parameterType="DBUser">
+		update T_Article
+		<set>
+			<if test="brief != null and brief != ''">brief = #{brief},</if>
+			<if test="details != null and details != ''">details = #{details},</if>
+			<if test="createAt != null">createAt = #{createAt},</if>
+			<if test="releasePlace != null and releasePlace != ''">releasePlace = #{releasePlace},</if>
+			<if test="briefInfo != null and briefInfo != ''">briefInfo = #{briefInfo},</if>
+			<if test="articleGroup != null and articleGroup != ''">articleGroup = #{articleGroup}, </if>
+		<if test="articleIndex != null and articleIndex != ''">articleIndex = #{articleIndex}, </if>
+		</set>
+		where id = #{id}
+	</update>
+</mapper>
