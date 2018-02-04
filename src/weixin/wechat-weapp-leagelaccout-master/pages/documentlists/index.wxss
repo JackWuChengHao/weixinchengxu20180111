@@ -3,6 +3,23 @@
   background-color: #f2f2f2;
 }
 
+.books-bar{
+  display:flex;
+  background: #0a4e27;
+  color: #fafafa;
+}
+.books-bar_left{
+  flex: 40%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.books-bar_right{
+  flex: 60%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 .document_content_col{
   display: flex;
@@ -11,14 +28,20 @@
 }
 
 .document_content_col .classify{
-  height: 200px;
+  margin-left: 3%;
+  flex:40%;
+  height: 360px;
+  text-align: left;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 
 .document_content_col .filename{
-  display: flex;
+  flex:60%;
+  /* display: flex; */
   flex-direction: column;
   margin: 5px;
+  color: #0a4e27;
 }
