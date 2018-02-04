@@ -9,7 +9,7 @@
     </view>
   </view>
   <view class="sign_bar">
-    <view class="user_collection">您当前积分: <image class="points" src="/images/points-icon.png"></image></view>
+    <view class="user_collection">我的积分: <image class="points" src="/images/points-icon.png"></image></view>
     <view class="user_sign">
       <view class="sign_in_text">签到</view>
     </view>
