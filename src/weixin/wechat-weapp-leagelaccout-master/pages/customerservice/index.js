@@ -28,6 +28,7 @@ Page({
   onShow: function () {
     wx.hideLoading();
     wx.showModal({
+      showCancel:false,
       content: '客服暂未开通',
       complete:function(){
         wx.navigateBack({
