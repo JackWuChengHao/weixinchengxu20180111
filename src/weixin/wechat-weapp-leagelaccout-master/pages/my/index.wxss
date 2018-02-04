@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   align-content: space-between;
   padding: 50rpx 0;
-  background: #3d85c6;
+  background: #0a4e27;
   margin-bottom: 40rpx;
 }
 
@@ -29,10 +29,9 @@
 
 .sign_in_text{
   background-color: #F2f2f2;
-  margin-left: 50%;
+  align-content: center;
   color:#333;
-  font-size:  12px;
-  border: solid #dadada 2rpx;
+  font-size:  17px;
   height: 40rpx;
 }
 
@@ -62,7 +61,8 @@
 }
 .weui_cell_bd_p{
   font-size: 14px;
-  color: #939393;
+  color: #333;
+  bottom: 2px;
 }
 .badge{
   position: absolute;

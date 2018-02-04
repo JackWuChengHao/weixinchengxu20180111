@@ -40,7 +40,7 @@
         "pagePath": "pages/documentlists/index",
         "iconPath": "images/document-list.png",
         "selectedIconPath": "images/active-document-list.png",
-        "text": "文献资料"
+        "text": "法律文献"
       },
       {
         "pagePath": "pages/my/index",
