@@ -4,15 +4,15 @@
     <view class="books-bar_right">文章</view>
   </view>
   <view class="document_content_col">
-
     <view class="classify">
+    
       <block wx:for="{{documentlist}}">
-        <view data-classify-id="{{item.id}}" class="classify" data-id=' {{item.id}}' bindtap='change_filename'> {{item.name}}</view>
+        <view data-classify-id="{{item.id}}" class="classify" style="color:{{item.color}}" data-id=' {{item.id}}' bindtap='change_filename'> {{item.name}}</view>
       </block>
     </view>
     <view class="filename">
       <block wx:for="{{now_filename}}">
-        <view data-file-id="{{item.id}}" class="filename" data-id="{{item.id}}" bindtap='open'> {{item.name}}</view>
+        <view data-file-id="{{item.id}}" class="filename" style="color:{{filelistcolor.color}}" data-id="{{item.id}}" bindtap='openfile'> {{item.name}}</view>
       </block>
     </view>
   </view>

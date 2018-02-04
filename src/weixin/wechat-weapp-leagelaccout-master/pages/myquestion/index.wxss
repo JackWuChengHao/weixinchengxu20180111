@@ -8,12 +8,14 @@
   display: flex;
   text-align: center;
   flex-direction: row;
-  justify-content: space-around;
-  background: white;
+  color: #fafafa;
 }
 
 .header .swiper{
+  width: 50%;
     border-left: 1px #000;
+    padding-top:10px;
+  padding-bottom: 10px;
 }
 
 .header text{
@@ -42,11 +44,13 @@ padding: 0rpx 20rpx;
 border-top: 1rpx solid #f0f0f0;
 overflow:scroll;
 }
+
 .item-li .item-content text{
 color: #4e4e4e;
 font-size: 46rpx;
 overflow:scroll;
 }
+
 .item-li .item-title text{
 color: #000;
 line-height: 100rpx;

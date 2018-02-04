@@ -1,6 +1,10 @@
 Page({
   data: {
-    content: [
+    undo:"block",
+    hasdo:"none",
+    undocolor:'#0a4e27',
+    hasdocolor:'#13773d',
+    hasdo_content: [
       {
       id: '01',
       contents: 'question',
@@ -19,6 +23,10 @@ Page({
     status: '0',
     apply: '没问题',
 }
+    ],undo_content:[
+    { id: '4', contents: '求解决' }, { id: '5', contents: '求解决' },
+     {id: '6', contents: '求解决' },
+      {id: '7', contents: '求解决' }
 ]
 },
   onLoad() {
@@ -26,6 +34,27 @@ Page({
   },
   onShow(){
     wx.hideLoading();
+  },
+  swiper:function(e){
+
+    var that = this;
+    if (e.currentTarget.dataset.status == 0){
+        that.setData({
+       
+          undo: "block",
+          hasdo: "none",
+          undocolor: '#0a4e27',
+          hasdocolor: '#13773d',
+        })
+     }else{
+      that.setData({
+     
+        undo: "none",
+        hasdo: "block",
+        undocolor: '#13773d',
+        hasdocolor: '#0a4e27',
+      })
+    }
   }
   ,
   showHide(e) {

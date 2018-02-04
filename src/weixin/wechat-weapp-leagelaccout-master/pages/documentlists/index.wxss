@@ -2,7 +2,6 @@
   display:flex;
   background-color: #f2f2f2;
 }
-
 .books-bar{
   display:flex;
   background: #0a4e27;
@@ -28,20 +27,14 @@
 }
 
 .document_content_col .classify{
-  margin-left: 3%;
-  flex:40%;
-  height: 360px;
-  text-align: left;
+  height: 300px;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
 }
 
 
 .document_content_col .filename{
-  flex:60%;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   margin: 5px;
-  color: #0a4e27;
 }

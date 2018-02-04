@@ -1,14 +1,24 @@
 <view >
     <view class="header"> 
-      <view class="swiper"> 未解决问题 </view>
-      <view class="swiper">  已解决问题 </view>
+      <view class="swiper" data-status="0"  bindtap='swiper' style="background:{{undocolor}}"> 未解决问题 </view>
+      <view class="swiper"  data-status="1" bindtap='swiper' style="background:{{hasdocolor}}">  已解决问题 </view>
     </view>
-　　<view class="container-wrap">
-　　　　<block wx:for="{{content}}">
-　　　　　　<view class="item-li">
+
+　<view class="container-wrap" style="display:{{hasdo}}">
+　　　　<block wx:for="{{hasdo_content}}">
+　　　　　　<view class="item-li"  data-id="{{item.id}}">
 　　　　　　　　<view class="item-content">{{item.contents}}</view>
 　　　　　　　　<view class="item-apply">{{item.apply}}</view>
 　　　　　　</view>
 　　　　</block>
 　　</view>
+ 
+    <view class="container-wrap" style="display:{{undo}}">
+　　　　<block wx:for="{{undo_content}}">
+　　　　　　<view class="item-li" data-id="{{item.id}}">
+　　　　　　　　<view class="item-content">{{item.contents}}</view>
+　　　　　　</view>
+　　　　</block>
+　　</view>
+
 </view>
