@@ -1,12 +1,24 @@
 <view class="setinfo_container"> 
-  <view class="menu">
-    <view class="menu-item">
-      <text>昵称:</text><input value="{{user.nichen}}" ></input>
-     </view>
-    <view class="menu-item"> 
-      <text>联系方式:</text><input value="{{user.telephone}}"></input>
-    </view>
+
+  <view class="info_list">
+        <view class="weui_cell" >
+            <view class="weui_cell_hd"><image src="../../images/nichen.png"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> 昵称</view>
+            </view>
+            <input class="badge" value="{{user.nichen}}"></input>
+        </view>
+        <view class="weui_cell" >
+            <view class="weui_cell_hd"><image src="../../images/telephone.png"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> 联系方式</view>
+            </view>
+            <input class="badge" value="{{user.telephone}}"></input>
+        </view>
   </view>
+
+
+
 
 <view class="low_button">
 <button type='primary'>保存</button>
