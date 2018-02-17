@@ -2,9 +2,21 @@ package com.wechat.utils;
 
 import java.io.IOException;
 import java.net.URI;
+import java.security.AlgorithmParameters;
+import java.security.Key;
+import java.security.NoSuchAlgorithmException;
+import java.security.Security;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+
+import org.apache.commons.codec.binary.Base64;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
@@ -14,6 +26,14 @@ import org.apache.http.util.EntityUtils;
 
 import com.alibaba.fastjson.JSON;
 
+/**
+ * @author XiaoWu
+ *
+ */
+/**
+ * @author XiaoWu
+ *
+ */
 final public class weChatUtils {
 
 	private Map<String,String> params = new HashMap<String,String>();
@@ -34,6 +54,11 @@ final public class weChatUtils {
 	}
 
 
+	/**
+	 * 获取用户的唯一标识openid
+	 * @return
+	 * @throws Exception
+	 */
 	public String getOpenId() throws Exception {
 		Map<String, Object> result = JSON.parseObject(requestWX());
 		String openid = result.get("openid").toString() == null ? "":result.get("openid").toString();
@@ -48,7 +73,6 @@ final public class weChatUtils {
 
 
 	private String requestWX( ){
-
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 
 		String resultString = "";
@@ -89,4 +113,51 @@ final public class weChatUtils {
 		return resultString;
 
 	}
+
+
+
+	/**
+	 * 解析微信服务器的encryptedData内容
+	 * @param encryptedData
+	 * @param iv
+	 * @return
+	 */
+	public String analyzeEncryptedData(String encryptedData,String iv) {
+
+		Map<String, Object> result = JSON.parseObject(requestWX());
+		byte[] result_out = null;
+		Cipher cipher = null;
+		byte[] seesion_key_de64 =  Base64.decodeBase64(result.get("openid").toString().getBytes());
+		byte[] encrypyen_64 =  Base64.decodeBase64(encryptedData.getBytes());
+		byte[] iv_de64 =  Base64.decodeBase64(iv.getBytes());
+
+		try {
+			Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+			cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
+		} catch (NoSuchAlgorithmException | NoSuchPaddingException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}  
+		Key sKeySpec = new SecretKeySpec(seesion_key_de64, "AES");  
+		try {
+			cipher.init(Cipher.DECRYPT_MODE, sKeySpec, generateIV(iv_de64));
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}// 初始化  
+
+		try {
+			result_out = cipher.doFinal(encrypyen_64);
+		} catch (IllegalBlockSizeException | BadPaddingException e) {
+			e.printStackTrace();
+		}  
+		return new String(result_out);  
+	}
+
+	public  AlgorithmParameters generateIV(byte[] iv) throws Exception{  
+		AlgorithmParameters params = AlgorithmParameters.getInstance("AES");  
+		params.init(new IvParameterSpec(iv));  
+		return params;  
+	}  
+
 }
