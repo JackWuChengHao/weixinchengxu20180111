@@ -6,12 +6,16 @@
 
 
 .question_content{
-  width: 99%;
+  align-self: center;
+  align-items: center;
+  width: 80%;
   border: solid 1px black;
   border-radius: 3px;
-  height:1000rpx;
+  height:100px;
 }
 
 .low_button{
+ align-self: center;
    padding-top: 50rpx; 
+   width: 80%;
 }

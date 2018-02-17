@@ -1,10 +1,11 @@
+const utils = require("../../utils/util.js")
+
 var app = getApp()
 // var step = 1 // 当前操作的step  
 var maxTime = 60
 var currentTime = maxTime //倒计时的事件（单位：s）  
 var interval = null
 var hintMsg = null // 提示  
-var utils = require("../../utils/util.js")  
 var step_g = 1
 
 var phoneNum = null, identifyCode = null, password = null, rePassword = null;

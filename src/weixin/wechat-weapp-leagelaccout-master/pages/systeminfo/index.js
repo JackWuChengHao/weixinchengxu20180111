@@ -1,3 +1,5 @@
+const utils = require("../../utils/util.js")
+
 // pages/systeminfo/index.js
 Page({
 

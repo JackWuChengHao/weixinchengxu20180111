@@ -1,4 +1,4 @@
-const config = require('../config.js');
+const config = require('../config/config.js');
 
 /**
  * 判断手机号是否合法并返回内容
@@ -30,8 +30,8 @@ function isMobileNumber(phone) {
  */
 function AJAX( data = '', fn, method = "get", header = {}) {
     wx.request({
-      url: config.ServerHost + data,
-      method: method ? method : 'get',
+      url: config.serverHost + data,
+      method: method ,
       data: {},
       header: header ? header : { "Content-Type": "application/json" },
       success: function (res) {

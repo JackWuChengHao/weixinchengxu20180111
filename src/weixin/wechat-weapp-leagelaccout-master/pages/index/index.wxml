@@ -1,8 +1,9 @@
 <!--轮播组建-->
-  <swiper indicator-dots='true' autoplay='true' vertical='true' interval='10000' duration='500' style='height=100%'>
-    <!-- <block wx:for="{{nav_pic}}">
-    <swiper-item><image  src="{{item.picurl}}" data-navurl="{{item.url}}"     bindtap='nav2section'></image></swiper-item>
-    </block> -->
+  <swiper indicator-dots='true' class="swiper" autoplay='true'  interval='10000' duration='500' style='height=100%'>
+     <!-- <block wx:for="{{nav_pic}}"> -->
+     <swiper-item><image src='../../images/banner/banner1.gif'></image></swiper-item> 
+    <swiper-item><image src='../../images/banner/banner2.gif'></image></swiper-item>
+    <!-- </block>  -->
   </swiper>
 <view id="section">
     <view class="flex-wrp" style="flex-direction:row;">
@@ -17,7 +18,8 @@
     </view>
 </view>
 <view class="white">
-<text>互动新闻</text>
+<text >新闻互动</text>
+
 </view>
 <view id="menus">
  

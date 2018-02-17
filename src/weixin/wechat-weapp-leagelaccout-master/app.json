@@ -1,22 +1,17 @@
 {
   "pages": [
-
-      "pages/index/index",
-      "pages/myquestion/index",
-        "pages/detailmessage/index",
-      "pages/setInfo/index",
-      "pages/lvshiquestion/index",
+   
+    "pages/index/index",
+    "pages/myquestion/index",
+    "pages/detailmessage/index",
+    "pages/setInfo/index",
     "pages/consult/index",
     "pages/register/index",
     "testpages/register/index",
-    "pages/registerByselfpHONE/index",
     "pages/documentlists/index",
     "pages/my/index",
     "pages/bbs/index",
-   
-    "pages/systeminfo/index",
-    "pages/customerservice/index"
-  ],
+    "pages/systeminfo/index"  ],
   "window": {
     "backgroundTextStyle": "white",
     "navigationBarTextStyle": "black",

@@ -31,7 +31,9 @@
 
 .document_content_col .classify {
   height: 300px;
+  
   display: flex;
+  flex:20%;
   flex-direction: column;
   background-color: white;
   margin-top: 0.5px;
@@ -39,19 +41,24 @@
 }
 
 .document_content_col .classify_out {
-  height: 300px;
   display: flex;
+  text-align: center;
+  height: 300px;
+  width: 100%;
   flex-direction: column;
 }
 
 .document_content_col .filename_out {
   display: flex;
+  padding-top: 10px;
   flex-direction: column;
-  margin: 5px;
+  margin: 50px;
 }
 
 .document_content_col .filename {
   display: flex;
+  float: right;
+  flex:80%;
   flex-direction: column;
   background-color: white;
   margin-top: 0.5px;

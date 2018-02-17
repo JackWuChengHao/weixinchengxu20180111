@@ -1,3 +1,4 @@
+const utils = require("../../utils/util.js")
 //获取应用实例
 var app = getApp()
 Page({
@@ -9,13 +10,13 @@ Page({
         duration: 1000,
         loadingHidden: true,  // loading
         y_menus: [
-          { id:"1",title: '胡律师人好' },
-          { id: "2",title: '胡律师人好' },
-          { id: "3",title: '胡律师人好' },
-          { id: "4",title: '胡律师人好' },
-          { id: "5",title: '胡律师人好' },
-          { id: "6",title: '胡律师人好' },
-          { id: "7",title: '胡律师人好' },
+          { id:"1",title:  '问题1' },
+          { id: "2", title: '问题2' },
+          { id: "3", title: '问题3' },
+          { id: "4", title: '问题4' },
+          { id: "5", title: '问题5' },
+          { id: "6", title: '问题6' },
+          { id: "7", title: '问题7' },
         ],
         x_menus: [
           { title: '教师', 

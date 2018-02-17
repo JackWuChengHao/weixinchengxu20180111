@@ -1,3 +1,5 @@
+const utils = require("../../utils/util.js");
+
 // testpages/register/index.js
 Page({
 

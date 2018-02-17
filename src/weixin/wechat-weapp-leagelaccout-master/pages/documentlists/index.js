@@ -1,3 +1,4 @@
+const utils = require("../../utils/util.js")
 // pages/documentlists/index.js
 Page({
 
@@ -11,50 +12,38 @@ Page({
         documentlist:[
         {
           id:"1",
-          name:"劳动人事制度",
+          name:"对外合同签订篇",
           color: "black" 
         },
         {
           id:"2",
-          name:"伤害事故处理",
+          name:"教师职业保护篇",
           color: "black" 
         },
         {
           id: "3",
-          name: "幼儿园专题",
+          name: "日常教育教学篇",
           color: "black" 
         },
         {
           id: "4",
-          name: "培训机构专题",
+          name: "校园安全管理篇",
           color: "black" 
         },
         {
           id: "5",
-          name: "诉讼案例",
+          name: "学生权利维护篇",
           color: "black" 
         },
         {
           id: "6",
-          name: "理论研究",
+          name: "预防违法犯罪篇",
           color: "black" 
         }
         
         ],
-        filename:
-        [{ id: "1", name: "从《劳动合同法》看学校该如何完善用工制度", color: "black" }, { id: "2", name: "单位不得收取押金、扣留证件或档案", color: "black" }, { id: "3", name: "女职工在孕、产、哺期间的劳动保护", color: "black" }, { id: "4", name: "如何申请工伤认定", color: "black" }, { id: "5", name: "用人单位违法解除劳动合同的责任", color: "black"}],
-        filename1:
-        [{ id: "1", name: "地震中的逃生避险策略", color: "black" }, { id: "2", name: "发生火灾后如何紧急逃生", color: "black" }, { id: "3", name: "洪水到来时的紧急避险措施", color: "black" }, { id: "4", name: "投保校方责任险", color: "black" }, { id: "5", name: "拥挤踩踏事故的安全对策", color: "black"}],
-        filename2:
-        [{ id: "1", name: "成都市民办幼儿园教育现状" }, { id: "4", name: "投保校方责任险" }],
-        filename3:
-        [{ id: "4", name: "发生火灾后如何紧急逃生" }, { id: "4", name: "投保校方责任险" }],
-        filename4:
-        [{ id: "5", name: "发生火灾后如何紧急逃生" }, { id: "4", name: "投保校方责任险" }],
-        filename5:
-        [{ id: "6", name: "发生火灾后如何紧急逃生" }, { id: "4", name: "投保校方责任险" }],
-        
-        now_filename:[]
+        filenamelists:
+        [[{ id: "1-1", name: "对外合同签订", color: "black" }], [{ id: "2-1", name: "教师职业保护", color: "black" }], [{ id: "3-1", name: "日常教育教学" }], [{ id: "4-1", name: "校园安全管理" }], [{ id: "5-1", name: "学生权利维护" }], [{ id: "6-1", name: "预防违法犯罪" }]]
       
   },
 

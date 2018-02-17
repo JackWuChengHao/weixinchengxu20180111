@@ -1,3 +1,4 @@
+const utils = require("../../utils/util.js")
 // pages/detailmessage/index.js
 Page({
 
@@ -7,8 +8,8 @@ Page({
   data: {
     id:0,
     item:{
-      title:"测试",
-      content:"这是我们大家的问题你明白吗,哦你还不明白吗我真的是无语了你到西在想什么"
+      title:"问题1",
+      content:"你好：你的问题已经解决"
     }
   },
 
